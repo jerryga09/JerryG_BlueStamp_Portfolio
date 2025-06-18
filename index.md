@@ -1,7 +1,7 @@
 # Gesture Controlled Robot
 The Gesture Controlled Robot moves based off a gauntlet someone attaches on their wrist. The movements of one's wrist affects the movements of the robot. 
 
-You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
+<!---You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions: -->
 ```HTML 
 <!--- This is an HTML comment in Markdown -->
 <!--- Anything between these symbols will not render on the published site -->
