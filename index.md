@@ -53,6 +53,8 @@ Figure :Overhead Picture of Completed Milestone 1
 
 <img src="IMG_2859.jpg" alt="Headstone Image" width="400">
 
+### Code for motors
+
 ```
 int motor1pin1 = 2;
 int motor1pin2 = 3;
