@@ -49,6 +49,10 @@ The Gesture Controlled Robot is operated from a gauntlet device someone can wear
 
 My first milestone was essentially building the hardware section of the robot. I assembled the car and attached all the motors. I soldered wires onto the motors and made sure the motors were locked into place on the chassis. Important materials that I used during milestone 1 included 2 L298 motor drivers, an Arduino Uno R3, a breadboard, 4 DC motors, and the chassis. I wired everything and connected all the pins with the help of a breadboard. The motor drivers received commands such as HIGH or LOW, HIGH meant the motor should spin, LOW meant it shouldn't. After writing some simple code just to make sure the motors would spin, I uploaded the code to the Arduino Uno, which is responsible for processing commands. Now, all I needed to do was to power it all up using a 9V battery that was connected to a barrel jack wire. I ran the code, and all 4 motors were able to work. So far, everything has gone smoothly. I had some problems understanding how to assemble the chassis and I had to de-assemble the top because I forgot to solder wires onto the motors, but all I had to do was unscrew the top. My biggest concern right now is the organization. The motor drivers, breadboard, and arduino are all currently just sitting on top of the actual robot, so there are a lot of wires just floating around which is really confusing. All the components aren't set yet, but I plan on zip tying everything down once I make sure that's where I want everything. Next, I plan on moving to milestone 2, which is starting the bluetooth section. This includes creating the actual gaunlet someone will be wearing, using the bluetooth modules, and wiring everything together. 
 
+Figure :Overhead Picture of Completed Milestone 1
+![Headstone Image](IMG_2859.jpg)
+
+
 <!--- For your first milestone, describe what your project is and how you plan to build it. You can include:
 - An explanation about the different components of your project and how they will all integrate together
 - Technical progress you've made so far
@@ -57,7 +61,7 @@ My first milestone was essentially building the hardware section of the robot. I
 
 # Schematics 
 <!--- Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. -->
-Figure 1
+Figure :Schematic of Milestone 1
 ![Headstone Image](mileston1circuit.png)
 
 # Code
