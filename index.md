@@ -53,6 +53,55 @@ Figure :Overhead Picture of Completed Milestone 1
 
 <img src="IMG_2859.jpg" alt="Headstone Image" width="400">
 
+```
+int motor1pin1 = 2;
+int motor1pin2 = 3;
+
+
+int motor2pin1 = 4;
+int motor2pin2 = 5;
+
+
+int motor3pin1 = 8;
+int motor3pin2 = 9;
+
+
+int motor4pin1 = 10;
+int motor4pin2 = 11;
+
+
+void setup() {
+ // put your setup code here, to run once:
+ pinMode(motor1pin1, OUTPUT);
+ pinMode(motor1pin2, OUTPUT);
+ pinMode(motor2pin1, OUTPUT);
+ pinMode(motor2pin2, OUTPUT);
+ pinMode(motor3pin1, OUTPUT);
+ pinMode(motor3pin2, OUTPUT);
+ pinMode(motor4pin1, OUTPUT);
+ pinMode(motor4pin2, OUTPUT);
+
+
+ digitalWrite(motor1pin1, LOW);
+ digitalWrite(motor1pin2, HIGH);
+ digitalWrite(motor2pin1, LOW);
+ digitalWrite(motor2pin2, HIGH);
+ digitalWrite(motor3pin1, LOW);
+ digitalWrite(motor3pin2, HIGH);
+ digitalWrite(motor4pin1, LOW);
+ digitalWrite(motor4pin2, HIGH);
+ delay(5000);
+ digitalWrite(motor1pin1, LOW);
+ digitalWrite(motor1pin2, LOW);
+ digitalWrite(motor2pin1, LOW);
+ digitalWrite(motor2pin2, LOW);
+ digitalWrite(motor3pin1, LOW);
+ digitalWrite(motor3pin2, LOW);
+ digitalWrite(motor4pin1, LOW);
+ digitalWrite(motor4pin2, LOW);
+}
+```
+
 
 <!--- For your first milestone, describe what your project is and how you plan to build it. You can include:
 - An explanation about the different components of your project and how they will all integrate together
