@@ -51,7 +51,7 @@ My first milestone was essentially building the hardware section of the robot. I
 
 Figure :Overhead Picture of Completed Milestone 1
 ![Headstone Image](IMG_2859.jpg)
-<img src="IMG_2869.jpg" alt="Headstone Image" width="200">
+<img src="IMG_2859.jpg" alt="Headstone Image" width="200">
 
 
 <!--- For your first milestone, describe what your project is and how you plan to build it. You can include:
