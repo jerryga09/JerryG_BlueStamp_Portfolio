@@ -83,6 +83,7 @@ void setup() {
  pinMode(motor4pin2, OUTPUT);
 
 //code for all motors to spin in the same direction
+
  digitalWrite(motor1pin1, LOW);
  digitalWrite(motor1pin2, HIGH);
  digitalWrite(motor2pin1, LOW);
@@ -91,7 +92,9 @@ void setup() {
  digitalWrite(motor3pin2, HIGH);
  digitalWrite(motor4pin1, LOW);
  digitalWrite(motor4pin2, HIGH);
+
  delay(5000); //spin for 5 seconds
+
  digitalWrite(motor1pin1, LOW);
  digitalWrite(motor1pin2, LOW);
  digitalWrite(motor2pin1, LOW);
@@ -102,7 +105,6 @@ void setup() {
  digitalWrite(motor4pin2, LOW); //code to stop motors
 }
 ```
-
 
 <!--- For your first milestone, describe what your project is and how you plan to build it. You can include:
 - An explanation about the different components of your project and how they will all integrate together
