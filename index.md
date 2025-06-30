@@ -38,7 +38,7 @@ My second milestone was mostly about bluetooth. First off, I had to connect and 
 For my final milestone, my goal is to put everything together. Most of it will be writing code to turn the accelerometer data into actual movements of the robot. 
 
 Figure : Overhead Picture of Completed Milestone 2 
-m
+
 <img src="IMG_2921.jpg" alt="Headstone Image" width="400">
 
 # First Milestone
