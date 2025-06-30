@@ -37,11 +37,9 @@ The Gesture Controlled Robot is operated from a gauntlet device someone can wear
 My second milestone was mostly about bluetooth. First off, I had to connect and pair the two HC05's. I searched up many tutorials about how to do this. The process included going into AT Mode, changing the settings of the Master & Slave HC05's, etc. One main challenge that I encountered was trying to figure out how to use a voltage divider. Because my arduino nano runs on 5V and the HC05 uses 3.3V, I had to use a voltage divider to make sure the HC05 doesn't get damaged. I spent at least half a day trying to figure this out, until I realized that I had an accelerometer to use (because of this I didn't use a voltage divider). I was able to get the accelerometer to print out data in the form of acceleration in the x, y, and z directions, as well as the acceleration of the rotation in the x, y, z directions. The final part of this milestone was to send the data from the accelerometer to the arduino uno. This was arguably the hardest part of the milestone and it definitely took a lot of time, but I was able to accomplish this in the end. 
 For my final milestone, my goal is to put everything together. Most of it will be writing code to turn the accelerometer data into actual movements of the robot. 
 
-<!--- For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
-- Technical details of what you've accomplished and how they contribute to the final goal
-- What has been surprising about the project so far
-- Previous challenges you faced that you overcame
-- What needs to be completed before your final milestone -->
+Figure : Overhead Picture of Completed Milestone 2 
+m
+<img src="IMG_2921.jpg" alt="Headstone Image" width="400">
 
 # First Milestone
 
@@ -51,7 +49,7 @@ For my final milestone, my goal is to put everything together. Most of it will b
 
 My first milestone was essentially building the hardware section of the robot. I assembled the car and attached all the motors. I soldered wires onto the motors and made sure the motors were locked into place on the chassis. Important materials that I used during milestone 1 included 2 L298 motor drivers, an Arduino Uno R3, a breadboard, 4 DC motors, and the chassis. I wired everything and connected all the pins with the help of a breadboard. The motor drivers received commands such as HIGH or LOW, HIGH meant the motor should spin, LOW meant it shouldn't. After writing some simple code just to make sure the motors would spin, I uploaded the code to the Arduino Uno, which is responsible for processing commands. Now, all I needed to do was to power it all up using a 9V battery that was connected to a barrel jack wire. I ran the code, and all 4 motors were able to work. So far, everything has gone smoothly. I had some problems understanding how to assemble the chassis and I had to de-assemble the top because I forgot to solder wires onto the motors, but all I had to do was unscrew the top. My biggest concern right now is the organization. The motor drivers, breadboard, and arduino are all currently just sitting on top of the actual robot, so there are a lot of wires just floating around which is really confusing. All the components aren't set yet, but I plan on zip tying everything down once I make sure that's where I want everything. Next, I plan on moving to milestone 2, which is starting the bluetooth section. This includes creating the actual gaunlet someone will be wearing, using the bluetooth modules, and wiring everything together. 
 
-Figure :Overhead Picture of Completed Milestone 1
+Figure : Overhead Picture of Completed Milestone 1
 
 <img src="IMG_2859.jpg" alt="Headstone Image" width="400">
 
