@@ -129,18 +129,14 @@ Figure : Overhead Picture of Completed Milestone 1
 int motor1pin1 = 2; 
 int motor1pin2 = 3;
 
-
 int motor2pin1 = 4;
 int motor2pin2 = 5;
-
 
 int motor3pin1 = 8;
 int motor3pin2 = 9;
 
-
 int motor4pin1 = 10;
 int motor4pin2 = 11;
-
 
 void setup() {
  pinMode(motor1pin1, OUTPUT);
