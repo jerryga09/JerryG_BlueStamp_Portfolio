@@ -41,6 +41,76 @@ Figure : Overhead Picture of Completed Milestone 2
 
 <img src="IMG_2921.jpg" alt="Headstone Image" width="400">
 
+### Code for Nano - Transmits Accelerometer Data
+```
+#include <SoftwareSerial.h>
+#include <Adafruit_MPU6050.h>
+#include <Adafruit_Sensor.h>
+#include <Wire.h>
+
+SoftwareSerial BT_Serial(2, 3); //TX, RX pins on nano
+
+Adafruit_MPU6050 mpu;
+
+void setup(void) {
+  BT_Serial.begin(9600);
+  Serial.begin(9600);
+  mpu.begin(); 
+
+  mpu.setAccelerometerRange(MPU6050_RANGE_8_G); 
+  mpu.setGyroRange(MPU6050_RANGE_500_DEG);
+  mpu.setFilterBandwidth(MPU6050_BAND_21_HZ);
+
+  delay(100); 
+}
+
+void loop() {
+  sensors_event_t a, g, temp;
+  mpu.getEvent(&a, &g, &temp);
+  BT_Serial.print(a.acceleration.x); 
+  BT_Serial.print(",");
+  BT_Serial.print(a.acceleration.y); 
+  BT_Serial.print(",");
+  BT_Serial.print(a.acceleration.z); 
+  BT_Serial.print(",");
+  BT_Serial.print(g.gyro.x);         
+  BT_Serial.print(",");
+  BT_Serial.print(g.gyro.y);         
+  BT_Serial.print(",");
+  BT_Serial.println(g.gyro.z);  
+  Serial.print(a.acceleration.x); 
+  Serial.print(",");
+  Serial.print(a.acceleration.y); 
+  Serial.print(",");
+  Serial.print(a.acceleration.z); 
+  Serial.print(",");
+  Serial.print(g.gyro.x);         
+  Serial.print(",");
+  Serial.print(g.gyro.y);         
+  Serial.print(",");
+  Serial.println(g.gyro.z);  
+
+  delay(500);
+}
+```
+### Code for Uno - Receives Accelerometer Data
+```
+#include <SoftwareSerial.h>
+
+SoftwareSerial mySerial(6, 7); 
+
+void setup() {
+  Serial.begin(9600);
+  mySerial.begin(9600);
+}
+
+void loop() {
+  if (mySerial.available()) {
+    String msg = mySerial.readStringUntil('\n');
+    Serial.println(msg);
+  }
+}
+```
 # First Milestone
 
 <!--- **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.** -->
