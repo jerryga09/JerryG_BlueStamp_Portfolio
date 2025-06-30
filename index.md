@@ -53,11 +53,11 @@ SoftwareSerial BT_Serial(2, 3); //TX, RX pins on nano
 Adafruit_MPU6050 mpu;
 
 void setup(void) {
-  BT_Serial.begin(9600);
-  Serial.begin(9600);
+  BT_Serial.begin(9600); //sets baud rate
+  Serial.begin(9600); //sets baud rate
   mpu.begin(); 
 
-  mpu.setAccelerometerRange(MPU6050_RANGE_8_G); 
+  mpu.setAccelerometerRange(MPU6050_RANGE_8_G); //setup
   mpu.setGyroRange(MPU6050_RANGE_500_DEG);
   mpu.setFilterBandwidth(MPU6050_BAND_21_HZ);
 
@@ -65,9 +65,9 @@ void setup(void) {
 }
 
 void loop() {
-  sensors_event_t a, g, temp;
-  mpu.getEvent(&a, &g, &temp);
-  BT_Serial.print(a.acceleration.x); 
+  sensors_event_t a, g, temp; 
+  mpu.getEvent(&a, &g, &temp); //get data
+  BT_Serial.print(a.acceleration.x); //print data in one line
   BT_Serial.print(",");
   BT_Serial.print(a.acceleration.y); 
   BT_Serial.print(",");
@@ -90,24 +90,24 @@ void loop() {
   Serial.print(",");
   Serial.println(g.gyro.z);  
 
-  delay(500);
+  delay(500); //update every 0.5 seconds
 }
 ```
 ### Code for Uno - Receives Accelerometer Data
 ```
 #include <SoftwareSerial.h>
 
-SoftwareSerial mySerial(6, 7); 
+SoftwareSerial mySerial(6, 7); //TX, RX pins on Uno
 
 void setup() {
-  Serial.begin(9600);
-  mySerial.begin(9600);
+  Serial.begin(9600); //sets baud rate
+  mySerial.begin(9600); //sets baud rate
 }
 
 void loop() {
-  if (mySerial.available()) {
-    String msg = mySerial.readStringUntil('\n');
-    Serial.println(msg);
+  if (mySerial.available()) { //if data is available to be read
+    String msg = mySerial.readStringUntil('\n'); //set a variable as the line of data
+    Serial.println(msg); //print data in serial monitor
   }
 }
 ```
