@@ -178,11 +178,13 @@ Figure :Schematic of Milestone 1
 
 <img src="mileston1circuit.png" alt="Headstone Image" width="400">
 
-<img src="overall schematic.png" alt="Headstone Image" width="400">
-
 Figure :Schematic of Bluetooth Gauntlet after Milestone 2
 
 <img src="bluetoothgauntlet.png" alt="Headstone Image" width="400">
+
+Figure :Schematic Found Online of Project
+
+<img src="overall schematic.png" alt="Headstone Image" width="400">
 
 # Code
 <!--- Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. -->
