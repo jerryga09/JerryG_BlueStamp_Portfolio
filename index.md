@@ -29,11 +29,16 @@ The Gesture Controlled Robot is operated from a gauntlet device someone can wear
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/n-TfUV6b3V0?si=D2EkX0eaJVq6PVdI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-My second milestone focused mainly on the Bluetooth communication aspect of the project. The first step was to connect and pair two HC-05 Bluetooth modules. These modules enable wireless communication between the Bluetooth gauntlet and the robotic car by transmitting data over a short range. To accomplish this, I followed several online tutorials that guided me through entering AT Mode and changing the settings to configure one HC-05 as the Master and the other as the Slave. One significant challenge I faced was figuring out how to use a voltage divider to protect the HC-05 modules, since the Arduino Nano operates at 5V logic while the HC-05 requires 3.3V signals. I spent several hours trying to set up the voltage divider correctly, but eventually realized I could use an accelerometer that I already had without needing the voltage divider. The accelerometer is a sensor that measures acceleration forces in three directions (x, y, and z axes), as well as rotational acceleration, which provides information about the motion and orientation of the glove. Using the accelerometer, I successfully obtained data outputs showing movement in all three axes. The most difficult part of this milestone was sending the accelerometer data wirelessly from the Arduino Nano to the Arduino Uno. For my final milestone, my goal is to turn the raw data from the accelerometer into commands for the car to move. 
-
-Figure : Overhead Picture of Completed Milestone 2 
+### Summary
+My second milestone focused mainly on the Bluetooth communication aspect of the project. The first step was to connect and pair two HC-05 Bluetooth modules. These modules enable wireless communication between the Bluetooth gauntlet and the robotic car by transmitting data over a short range. To accomplish this, I followed several online tutorials that guided me through entering AT Mode and changing the settings to configure one HC-05 as the Master and the other as the Slave. The MPU6050 accelerometer is a sensor that measures acceleration forces in three directions (x, y, and z axes), as well as rotational acceleration, which provides information about the motion and orientation of the glove. Using the accelerometer, I successfully obtained data outputs showing movement in all three axes. After this, the next step was to send the raw data from the Arduino Nano to the Arduino Uno via the bluetooth modules, which I was also able to accomplish. 
+### Challenges
+One significant challenge I faced was figuring out how to use a voltage divider to protect the HC-05 modules, since the Arduino Nano operates at 5V logic while the HC-05 requires 3.3V signals. I spent several hours trying to set up the voltage divider correctly, but eventually realized I could use an accelerometer without needing the voltage divider. The most tedious part of this milestone was sending the accelerometer data wirelessly from the Arduino Nano to the Arduino Uno. I had to write a lot of code and debug it everytime it failed. 
+### Next Steps
+For my final milestone, my goal is to turn the raw data from the accelerometer into commands for the car to move. 
 
 <img src="IMG_2921.jpg" alt="Headstone Image" width="400">
+
+Figure : Overhead Picture of Completed Milestone 2 
 
 ### Code for Nano - Transmits Accelerometer Data
 ```
@@ -111,11 +116,16 @@ void loop() {
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7Dbkg9NT-sA?si=TJ2dOaJaLXVbonkF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
 
-For my first milestone, I focused on building the hardware section of the robot. I assembled the chassis and attached all four DC motors, soldering wires onto each motor to ensure a secure connection. The motors were firmly locked into place on the chassis to prevent any movement during operation. The key components I used included four DC motors, two L298 motor driver modules, an Arduino Uno R3, a breadboard, and the chassis itself. The motor drivers act as controllers between the Arduino and the motors, receiving commands such as HIGH or LOW to control whether the motors spin or stop. The Arduino serves as the main controller, processing these commands and sending signals to the motor drivers. I wired everything together using a breadboard to connect the pins and components without having to solder. After writing and uploading simple test code to the Arduino, I powered the system with a 9V battery connected using a barrel jack wire, and all four motors successfully spun as expected. While the assembly mostly went smoothly, I faced some challenges. At first, I forgot to solder wires to the motors before attaching the top of the chassis, which required me to unscrew and disassemble part of the robot to fix it. I do have some concerns as of now. The motor drivers, breadboard, and Arduino are loosely placed on top of the chassis, with many wires hanging loosely, making the setup messy. I plan to tidy up the wiring with zip ties once I confirm the final component layout. Next, I plan to move on to milestone two, which involves building the Bluetooth gauntlet that will be worn to control the robot wirelessly. This will include integrating Bluetooth modules and wiring the glove for communication with the robot.
-
-Figure : Overhead Picture of Completed Milestone 1
+### Summary
+For my first milestone, I focused on building the hardware section of the robot. I assembled the chassis and attached all four DC motors, soldering wires onto each motor to ensure a secure connection. The motors were firmly locked into place on the chassis to prevent any movement during operation. The key components I used included four DC motors, two L298 motor driver modules, an Arduino Uno R3, a breadboard, and the chassis itself. The motor drivers act as controllers between the Arduino and the motors, receiving commands such as HIGH or LOW to control whether the motors spin or stop. The Arduino serves as the main controller, processing these commands and sending signals to the motor drivers. I wired everything together using a breadboard to connect the pins and components without having to solder. After writing and uploading simple test code to the Arduino, I powered the system with a 9V battery connected using a barrel jack wire, and all four motors successfully spun as expected. 
+### Challenges
+While the assembly mostly went smoothly, I faced some challenges. At first, I forgot to solder wires to the motors before attaching the top of the chassis, which required me to unscrew and disassemble part of the robot to fix it. I do have some concerns as of now. The motor drivers, breadboard, and Arduino are loosely placed on top of the chassis, with many wires hanging loosely, making the setup messy. I plan to tidy up the wiring with zip ties once I confirm the final component layout. 
+### Next Steps
+Next, I plan to move on to milestone two, which involves building the Bluetooth gauntlet that will be worn to control the robot wirelessly. This will include integrating Bluetooth modules and wiring the glove for communication with the robot.
 
 <img src="IMG_2859.jpg" alt="Headstone Image" width="400">
+
+Figure : Overhead Picture of Completed Milestone 1
 
 ### Code for motors
 
@@ -174,17 +184,16 @@ void setup() {
 
 # Schematics 
 <!--- Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. -->
-Figure :Schematic of Milestone 1
 
 <img src="mileston1circuit.png" alt="Headstone Image" width="400">
-
-Figure :Schematic of Bluetooth Gauntlet after Milestone 2
+Figure :Schematic of Milestone 1
 
 <img src="bluetoothgauntlet.png" alt="Headstone Image" width="400">
-
-Figure :Schematic Found Online of Project
+Figure :Schematic of Bluetooth Gauntlet after Milestone 2
 
 <img src="overall schematic.png" alt="Headstone Image" width="400">
+Figure :Schematic of Bluetooth Gauntlet after Milestone 2
+
 
 # Code
 <!--- Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. -->
