@@ -124,7 +124,6 @@ While the assembly mostly went smoothly, I faced some challenges. At first, I fo
 Next, I plan to move on to milestone two, which involves building the Bluetooth gauntlet that will be worn to control the robot wirelessly. This will include integrating Bluetooth modules and wiring the glove for communication with the robot.
 
 <img src="IMG_2859.jpg" alt="Headstone Image" width="400">
-
 Figure : Overhead Picture of Completed Milestone 1
 
 ### Code for motors
@@ -185,11 +184,14 @@ void setup() {
 # Schematics 
 <!--- Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. -->
 
+
 <img src="mileston1circuit.png" alt="Headstone Image" width="400">
 Figure :Schematic of Milestone 1
 
+
 <img src="bluetoothgauntlet.png" alt="Headstone Image" width="400">
 Figure :Schematic of Bluetooth Gauntlet after Milestone 2
+
 
 <img src="overall schematic.png" alt="Headstone Image" width="400">
 Figure :Schematic of Bluetooth Gauntlet after Milestone 2
