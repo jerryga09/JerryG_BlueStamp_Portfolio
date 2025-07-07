@@ -202,21 +202,154 @@ Figure :Schematic of Bluetooth Gauntlet after Milestone 2
 
 
 # Code
-<!--- Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. -->
-<!---
-```c++
-void setup() {
-  // put your setup code here, to run once:
+### Code for Controller
+```
+#include <SoftwareSerial.h>
+#include <Adafruit_MPU6050.h>
+#include <Adafruit_Sensor.h>
+#include <Wire.h>
+
+SoftwareSerial BT_Serial(2, 3); //TX, RX pins on nano
+
+Adafruit_MPU6050 mpu;
+
+void setup(void) {
+  BT_Serial.begin(9600);
   Serial.begin(9600);
-  Serial.println("Hello World!");
+  mpu.begin(); 
+
+  mpu.setAccelerometerRange(MPU6050_RANGE_8_G); 
+  mpu.setGyroRange(MPU6050_RANGE_500_DEG);
+  mpu.setFilterBandwidth(MPU6050_BAND_21_HZ);
+
+  delay(100); 
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  sensors_event_t a, g, temp;
+  mpu.getEvent(&a, &g, &temp);
+  BT_Serial.print(a.acceleration.x); 
+  BT_Serial.print(",");
+  BT_Serial.print(a.acceleration.y); 
+  BT_Serial.print(",");
+  BT_Serial.print(a.acceleration.z); 
+  BT_Serial.print(",");
+  BT_Serial.print(g.gyro.x);         
+  BT_Serial.print(",");
+  BT_Serial.print(g.gyro.y);         
+  BT_Serial.print(",");
+  BT_Serial.println(g.gyro.z);  
+  Serial.print(a.acceleration.x); //print code in serial console for debugging
+  Serial.print(",");
+  Serial.print(a.acceleration.y); 
+  Serial.print(",");
+  Serial.print(a.acceleration.z); 
+  Serial.print(",");
+  Serial.print(g.gyro.x);         
+  Serial.print(",");
+  Serial.print(g.gyro.y);         
+  Serial.print(",");
+  Serial.println(g.gyro.z);  
 
+  delay(500);
 }
 ```
--->
+### Code for Car
+```
+#include <SoftwareSerial.h>
+#include <Adafruit_MPU6050.h>
+#include <Adafruit_Sensor.h>
+#include <Wire.h>
+SoftwareSerial mySerial(6, 7); //TX, RX pins on Uno
+
+int motor12_pin1 = 2; //setting pins to motors
+int motor12_pin2 = 3;
+int motor34_pin1 = 4;
+int motor34_pin2 = 5;
+
+void setup() {
+  pinMode(motor12_pin1, OUTPUT);
+  pinMode(motor12_pin2, OUTPUT);
+  pinMode(motor34_pin1, OUTPUT);
+  pinMode(motor34_pin2, OUTPUT);
+  Serial.begin(9600); //sets baud rate
+  mySerial.begin(9600); //sets baud rate
+}
+
+void forward() {
+  digitalWrite(motor12_pin1, LOW);
+  digitalWrite(motor12_pin2, HIGH);
+  digitalWrite(motor34_pin1, LOW);
+  digitalWrite(motor34_pin2, HIGH);
+}
+
+void backward() {
+  digitalWrite(motor12_pin1, HIGH);
+  digitalWrite(motor12_pin2, LOW);
+  digitalWrite(motor34_pin1, HIGH);
+  digitalWrite(motor34_pin2, LOW);
+}
+
+void right() {
+  digitalWrite(motor12_pin1, LOW);
+  digitalWrite(motor12_pin2, HIGH);
+  digitalWrite(motor34_pin1, HIGH);
+  digitalWrite(motor34_pin2, LOW);
+}
+
+void left() {
+  digitalWrite(motor12_pin1, HIGH);
+  digitalWrite(motor12_pin2, LOW);
+  digitalWrite(motor34_pin1, LOW);
+  digitalWrite(motor34_pin2, HIGH);
+}
+
+void stopMotors() {
+  digitalWrite(motor12_pin1, LOW);
+  digitalWrite(motor12_pin2, LOW);
+  digitalWrite(motor34_pin1, LOW);
+  digitalWrite(motor34_pin2, LOW);
+}
+
+void loop() {
+  if (mySerial.available()) { //if data is available to be read
+    String msg = mySerial.readStringUntil('\n'); //set a variable as the line of data
+    //Serial.println(msg); //print data in serial monitor
+    float ax, ay, az, rx, ry, rz; //sets 6 variables as float
+    //finds position of commas
+    int comma1 = msg.indexOf(','); //looks for index of the first comma
+    int comma2 = msg.indexOf(',', comma1 + 1); //comma1 + 1 tells it to start searching one position after comma1
+    int comma3 = msg.indexOf(',', comma2 + 1); //same as above
+    int comma4 = msg.indexOf(',', comma3 + 1); //same as above
+    int comma5 = msg.indexOf(',', comma4 + 1); //same as above
+    ax = msg.substring(0, comma1).toFloat(); //sets variables as floats instead of strings
+    ay = msg.substring(comma1 + 1, comma2).toFloat();
+    az = msg.substring(comma2 + 1, comma3).toFloat();
+    rx = msg.substring(comma3 + 1, comma4).toFloat();
+    ry = msg.substring(comma4 + 1, comma5).toFloat();
+    rz = msg.substring(comma5 + 1).toFloat(); 
+    Serial.println(ax);
+    Serial.println(ay);
+    Serial.println(az);
+    Serial.println(rx);
+    Serial.println(ry);
+    Serial.println(rz);
+    Serial.println(" ");
+
+    if (ax > 4.7) {
+      forward();
+    } else if (ax < -4.7) {
+      backward();
+    } else if (ay > 4.6) {
+      left();
+    } else if (ay < -4.6) {
+      right();
+    } else {
+      stopMotors();
+    }
+  }
+}
+```
 
 # Starter Project - 6/17/25
 
