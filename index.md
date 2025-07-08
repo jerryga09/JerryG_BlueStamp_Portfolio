@@ -40,7 +40,7 @@ My biggest triumph at Bluestamp is the confidence in my ability to build a proje
 ### Next Steps (Modification and After Bluestamp)
 For my modification, I plan on making a few key upgrades. First, I want to attach an ultrasonic sensor to the front of the car to help it detect obstacles and prevent collisions. Next, I hope to design a frame or come up with a solution to keep all the components on top of the car sturdy, organized, and secure. Finally, I want to improve how the car turns. Rather than stopping before changing direction, I’d like it to be able to turn while moving forward or backward, making its movement feel more natural and realistic.
 
-Using the skills I have learned at Bluestamp, I plan on joining the Robotics team for the next school year. I joined during my Freshman year, but I wasn't very active because of lack of skill and time constraints. Bluestamp provided me with a foundation, and I feel confident that I can help the robotics team in mechanical and electrical areas.
+Using the skills I have learned at Bluestamp, I plan on joining the Robotics team for the next school year. I joined during my Freshman year, but I wasn't very active because of lack of skill and time constraints. Bluestamp provided me with a foundation, and I feel confident that the things I learned this summer can help me help the robotics team.
 
 <!--- For your final milestone, explain the outcome of your project. Key details to include are:
 - What you've accomplished since your previous milestone
@@ -50,7 +50,6 @@ Using the skills I have learned at Bluestamp, I plan on joining the Robotics tea
 
 
 # Second Milestone
-
 <!--- **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.** -->
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/n-TfUV6b3V0?si=D2EkX0eaJVq6PVdI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
