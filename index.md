@@ -105,7 +105,7 @@ Figure :Schematic of Bluetooth Gauntlet after Milestone 2
 
 <img src="overall schematic.png" alt="Headstone Image" width="400">
 
-Figure :Schematic of Bluetooth Gauntlet after Milestone 2
+Figure :Schematic Found Online of Entire Project
 
 
 # Code
