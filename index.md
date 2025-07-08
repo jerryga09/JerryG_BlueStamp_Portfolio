@@ -22,7 +22,6 @@ The Gesture Controlled Robot is operated from a gauntlet device someone can wear
 - What you hope to learn in the future after everything you've learned at BSE -->
 
 
-
 # Second Milestone
 
 <!--- **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.** -->
@@ -40,76 +39,6 @@ For my final milestone, my goal is to turn the raw data from the accelerometer i
 
 Figure : Overhead Picture of Completed Milestone 2 
 
-### Code for Nano - Transmits Accelerometer Data
-```
-#include <SoftwareSerial.h>
-#include <Adafruit_MPU6050.h>
-#include <Adafruit_Sensor.h>
-#include <Wire.h>
-
-SoftwareSerial BT_Serial(2, 3); //TX, RX pins on nano
-
-Adafruit_MPU6050 mpu;
-
-void setup(void) {
-  BT_Serial.begin(9600); //sets baud rate
-  Serial.begin(9600); //sets baud rate
-  mpu.begin(); 
-
-  mpu.setAccelerometerRange(MPU6050_RANGE_8_G); //setup
-  mpu.setGyroRange(MPU6050_RANGE_500_DEG);
-  mpu.setFilterBandwidth(MPU6050_BAND_21_HZ);
-
-  delay(100); 
-}
-
-void loop() {
-  sensors_event_t a, g, temp; 
-  mpu.getEvent(&a, &g, &temp); //get data
-  BT_Serial.print(a.acceleration.x); //print data in one line
-  BT_Serial.print(",");
-  BT_Serial.print(a.acceleration.y); 
-  BT_Serial.print(",");
-  BT_Serial.print(a.acceleration.z); 
-  BT_Serial.print(",");
-  BT_Serial.print(g.gyro.x);         
-  BT_Serial.print(",");
-  BT_Serial.print(g.gyro.y);         
-  BT_Serial.print(",");
-  BT_Serial.println(g.gyro.z);  
-  Serial.print(a.acceleration.x); 
-  Serial.print(",");
-  Serial.print(a.acceleration.y); 
-  Serial.print(",");
-  Serial.print(a.acceleration.z); 
-  Serial.print(",");
-  Serial.print(g.gyro.x);         
-  Serial.print(",");
-  Serial.print(g.gyro.y);         
-  Serial.print(",");
-  Serial.println(g.gyro.z);  
-
-  delay(500); //update every 0.5 seconds
-}
-```
-### Code for Uno - Receives Accelerometer Data
-```
-#include <SoftwareSerial.h>
-
-SoftwareSerial mySerial(6, 7); //TX, RX pins on Uno
-
-void setup() {
-  Serial.begin(9600); //sets baud rate
-  mySerial.begin(9600); //sets baud rate
-}
-
-void loop() {
-  if (mySerial.available()) { //if data is available to be read
-    String msg = mySerial.readStringUntil('\n'); //set a variable as the line of data
-    Serial.println(msg); //print data in serial monitor
-  }
-}
-```
 # First Milestone
 
 <!--- **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.** -->
@@ -126,55 +55,6 @@ Next, I plan to move on to milestone two, which involves building the Bluetooth 
 <img src="IMG_2859.jpg" alt="Headstone Image" width="400">
 
 Figure : Overhead Picture of Completed Milestone 1
-
-### Code for motors
-
-```
-int motor1pin1 = 2; 
-int motor1pin2 = 3;
-
-int motor2pin1 = 4;
-int motor2pin2 = 5;
-
-int motor3pin1 = 8;
-int motor3pin2 = 9;
-
-int motor4pin1 = 10;
-int motor4pin2 = 11;
-
-void setup() {
- pinMode(motor1pin1, OUTPUT);
- pinMode(motor1pin2, OUTPUT);
- pinMode(motor2pin1, OUTPUT);
- pinMode(motor2pin2, OUTPUT);
- pinMode(motor3pin1, OUTPUT);
- pinMode(motor3pin2, OUTPUT);
- pinMode(motor4pin1, OUTPUT);
- pinMode(motor4pin2, OUTPUT);
-
-//code for all motors to spin in the same direction
-
- digitalWrite(motor1pin1, LOW);
- digitalWrite(motor1pin2, HIGH);
- digitalWrite(motor2pin1, LOW);
- digitalWrite(motor2pin2, HIGH);
- digitalWrite(motor3pin1, LOW);
- digitalWrite(motor3pin2, HIGH);
- digitalWrite(motor4pin1, LOW);
- digitalWrite(motor4pin2, HIGH);
-
- delay(5000); //spin for 5 seconds
-
- digitalWrite(motor1pin1, LOW);
- digitalWrite(motor1pin2, LOW);
- digitalWrite(motor2pin1, LOW);
- digitalWrite(motor2pin2, LOW);
- digitalWrite(motor3pin1, LOW);
- digitalWrite(motor3pin2, LOW);
- digitalWrite(motor4pin1, LOW);
- digitalWrite(motor4pin2, LOW); //code to stop motors
-}
-```
 
 <!--- For your first milestone, describe what your project is and how you plan to build it. You can include:
 - An explanation about the different components of your project and how they will all integrate together
@@ -202,7 +82,8 @@ Figure :Schematic of Bluetooth Gauntlet after Milestone 2
 
 
 # Code
-### Code for Controller
+
+### Final Milestone Code for Controller
 ```
 #include <SoftwareSerial.h>
 #include <Adafruit_MPU6050.h>
@@ -254,7 +135,7 @@ void loop() {
   delay(500);
 }
 ```
-### Code for Car
+### Final Milestone Code for Car
 ```
 #include <SoftwareSerial.h>
 #include <Adafruit_MPU6050.h>
@@ -348,6 +229,124 @@ void loop() {
       stopMotors();
     }
   }
+}
+```
+
+### Milestone 2 - Code for Nano (Transmits Accelerometer Data)
+```
+#include <SoftwareSerial.h>
+#include <Adafruit_MPU6050.h>
+#include <Adafruit_Sensor.h>
+#include <Wire.h>
+
+SoftwareSerial BT_Serial(2, 3); //TX, RX pins on nano
+
+Adafruit_MPU6050 mpu;
+
+void setup(void) {
+  BT_Serial.begin(9600); //sets baud rate
+  Serial.begin(9600); //sets baud rate
+  mpu.begin(); 
+
+  mpu.setAccelerometerRange(MPU6050_RANGE_8_G); //setup
+  mpu.setGyroRange(MPU6050_RANGE_500_DEG);
+  mpu.setFilterBandwidth(MPU6050_BAND_21_HZ);
+
+  delay(100); 
+}
+
+void loop() {
+  sensors_event_t a, g, temp; 
+  mpu.getEvent(&a, &g, &temp); //get data
+  BT_Serial.print(a.acceleration.x); //print data in one line
+  BT_Serial.print(",");
+  BT_Serial.print(a.acceleration.y); 
+  BT_Serial.print(",");
+  BT_Serial.print(a.acceleration.z); 
+  BT_Serial.print(",");
+  BT_Serial.print(g.gyro.x);         
+  BT_Serial.print(",");
+  BT_Serial.print(g.gyro.y);         
+  BT_Serial.print(",");
+  BT_Serial.println(g.gyro.z);  
+  Serial.print(a.acceleration.x); 
+  Serial.print(",");
+  Serial.print(a.acceleration.y); 
+  Serial.print(",");
+  Serial.print(a.acceleration.z); 
+  Serial.print(",");
+  Serial.print(g.gyro.x);         
+  Serial.print(",");
+  Serial.print(g.gyro.y);         
+  Serial.print(",");
+  Serial.println(g.gyro.z);  
+
+  delay(500); //update every 0.5 seconds
+}
+```
+### Milestone 2 - Code for Uno (Receives Accelerometer Data)
+```
+#include <SoftwareSerial.h>
+
+SoftwareSerial mySerial(6, 7); //TX, RX pins on Uno
+
+void setup() {
+  Serial.begin(9600); //sets baud rate
+  mySerial.begin(9600); //sets baud rate
+}
+
+void loop() {
+  if (mySerial.available()) { //if data is available to be read
+    String msg = mySerial.readStringUntil('\n'); //set a variable as the line of data
+    Serial.println(msg); //print data in serial monitor
+  }
+}
+```
+### Milestone 1 - Code to Test Motors
+```
+int motor1pin1 = 2; 
+int motor1pin2 = 3;
+
+int motor2pin1 = 4;
+int motor2pin2 = 5;
+
+int motor3pin1 = 8;
+int motor3pin2 = 9;
+
+int motor4pin1 = 10;
+int motor4pin2 = 11;
+
+void setup() {
+ pinMode(motor1pin1, OUTPUT);
+ pinMode(motor1pin2, OUTPUT);
+ pinMode(motor2pin1, OUTPUT);
+ pinMode(motor2pin2, OUTPUT);
+ pinMode(motor3pin1, OUTPUT);
+ pinMode(motor3pin2, OUTPUT);
+ pinMode(motor4pin1, OUTPUT);
+ pinMode(motor4pin2, OUTPUT);
+
+//code for all motors to spin in the same direction
+
+ digitalWrite(motor1pin1, LOW);
+ digitalWrite(motor1pin2, HIGH);
+ digitalWrite(motor2pin1, LOW);
+ digitalWrite(motor2pin2, HIGH);
+ digitalWrite(motor3pin1, LOW);
+ digitalWrite(motor3pin2, HIGH);
+ digitalWrite(motor4pin1, LOW);
+ digitalWrite(motor4pin2, HIGH);
+
+ delay(5000); //spin for 5 seconds
+
+ digitalWrite(motor1pin1, LOW);
+ digitalWrite(motor1pin2, LOW);
+ digitalWrite(motor2pin1, LOW);
+ digitalWrite(motor2pin2, LOW);
+ digitalWrite(motor3pin1, LOW);
+ digitalWrite(motor3pin2, LOW);
+ digitalWrite(motor4pin1, LOW);
+ digitalWrite(motor4pin2, LOW); //code to stop motors
 }
 ```
 
