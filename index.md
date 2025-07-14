@@ -104,7 +104,12 @@ Figure :Schematic of Bluetooth Gauntlet after Milestone 2
 
 <img src="overall schematic.png" alt="Headstone Image" width="400">
 
-Figure :Schematic Found Online of Entire Project
+Figure :Online Schematic of Entire Project
+
+
+<img src="circuit_image (2).png" alt="Headstone Image" width="400">
+
+Figure :Schematic of Modificated Car Including Ultrasonic Sensors
 
 
 # Code
