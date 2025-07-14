@@ -20,7 +20,7 @@ To enable the car to move based on accelerometer data, I first wrote movement fu
 ### Challenges and Triumphs at Bluestamp
 My biggest challenge at Bluestamp was learning how to code with little to no previous experience. Although I have taken some python and C++ courses before, coding with an Arduino is a completely different thing. I definitely had to search up many tutorials on specific functions and how they work. It also took me a while with the electrical components of the project. Breadboards were confusing to me at first as well as voltage dividers, but I grew to understand how they worked. 
 
-My biggest triumph at Bluestamp is the confidence in my ability to build a project using accessible materials you can easily find online. Being able to bring together code, hardware, and logic to make something that actually moves and responds to input felt very rewarding. I learned to troubleshoot problems on my own and adapt when things didn’t go as planned, which gave me a sense of independence I didn’t have before. Now, I feel much more capable of tackling future projects, even ones that seem out of reach at first.
+My biggest triumph at Bluestamp is the increase of confidence in my ability to build a project using accessible materials you can easily find online. Being able to bring together code, hardware, and logic to make something that actually moves and responds to input felt very rewarding. I learned to troubleshoot problems on my own and adapt when things didn’t go as planned, which gave me a sense of independence I didn’t have before. Now, I feel much more capable of tackling future projects, even ones that seem out of reach at first.
 
 ### Key Topics learned at Bluestamp
 - Breadboard Usage
