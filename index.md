@@ -10,9 +10,37 @@ The Gesture Controlled Robot is operated from a gauntlet device someone can wear
 ![Headstone Image](logo.svg)
 
 # Components and How They Work
-HC05 Bluetooth Module - 
-L298N Motor Driver - 
-Ultrasonic Sensor - 
+### Arduino Uno
+### Arduino Nano
+
+### HC05 Bluetooth Module  
+The HC-05 is a Bluetooth module that allows wireless communication between devices. It can be used to send and receive data between your robot and a phone, computer, or another microcontroller. With a built-in transceiver, the module uses serial communication (TX/RX) to transmit data over short distances. By pairing it with your device/another module, you can control or monitor your robot wirelessly in real time. 
+
+### Steps to Pair 2 HC05 Bluetooth Modules
+1. Label 1 module as the slave and the other as the master.
+2. Connect and upload blank code into your Arduino
+3. Unplug power source and grab slave HC05 module
+4. Connect pins in the following way: RX->RX, TX->TX, GND->GND, 5V->5V, EN->3.3V
+5. We need to get into AT Command mode: Hold down the reset button on the Slave HC05 while plugging in the power source into the Arduino (You should now see long, slow blinks on your HC05)
+6. Enter the Serial Monitor in your Arduino IDE
+7. Make sure Baud Rate is "38400 baud" and "Both NL & CR" are selected
+8. Type AT twice into the serial monitor (you should get an error the first time and you should get an "OK" the second time)
+9. Type in "AT+ROLE?" into the serial monitor (if returns 0, it is the slave, if returns 1, it is the master)
+10. Type in "AT+ADDR?" to get the address of the Slave, Copy the string of numbers, letters, colons after "+ADDR:" onto a separate notepad/document BUT REPLACE COLONS WITH COMMAS
+11. Unplug Slave module from Arduino and use the same wiring configuration for Master module
+12. Unplug power source and repeat Step 5 to get into AT command mode for the Master module
+13. By default, when you type in "AT+ROLE?" into the serial monitor, it should return a "0" meaning that it is still a slave. Type in "AT+ROLE=1" to set the module as Master (Type in AT+ROLE? to make sure it has been set as master)
+14. Type in "AT+CMODE=0" so the module knows to only connect to one other module in the vicinity
+15. Copy the address of the Slave, which you have saved in Step 10. Type in "AT+BIND=[address]". (AT+BIND=? should return the address after you have completed this step)
+16. Grab a spare Arduino to connect to the Slave Module
+17. Do the same wiring configuration for the slave module again (found in Step 4). However, we have to make a few changes to the wiring. For both slave and master modules, instead of RX->RX & TX->TX, connect RX->TX & TX->RX. Also, disconnect the EN->3.3V, we won't be needing this anymore.
+18. If you have done the previous steps correctly, you should see the two modules blinking simultaneously (denoted by 2 quick blinks at a time)
+
+### L298N Motor Driver 
+
+### Ultrasonic Sensor 
+An Ultrasonic sensor has two eye-like sensors. The Transmitter sends high frequency sound waves and these sound waves reflect back towards the Receiver. The sensor calculates distance using the speed of sound and the time it takes for the sound waves to come back. Using simple Distance = Speed * Time mathematics, you can get the distance in whatever units you would like with conversions.
+
 # Final Milestone
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y-v5Rn76oAU?si=zlaKeDR1j38X5b0R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
