@@ -34,9 +34,10 @@ The HC-05 is a Bluetooth module that allows wireless communication between devic
 15. Copy the address of the Slave, which you have saved in Step 10. Type in "AT+BIND=[address]". (AT+BIND=? should return the address after you have completed this step)
 16. Grab a spare Arduino to connect to the Slave Module
 17. Do the same wiring configuration for the slave module again (found in Step 4). However, we have to make a few changes to the wiring. For both slave and master modules, instead of RX->RX & TX->TX, connect RX->TX & TX->RX. Also, disconnect the EN->3.3V, we won't be needing this anymore.
-18. If you have done the previous steps correctly, you should see the two modules blinking simultaneously (denoted by 2 quick blinks at a time)
+18. If you have done the previous steps correctly, you should see the two modules blinking simultaneously which means the two modules are now paired (denoted by 2 quick blinks at a time)
 
 ### L298N Motor Driver 
+The L298N Motor Driver is a dual H-bridge motor driver that lets you control the direction and speed of two DC motors. It takes signals from your microcontroller and converts them into high-power outputs that drive the motors. With inputs for enabling or disabling motors and controlling their rotation, it allows for features like forward/reverse motion and turning. 
 
 ### Ultrasonic Sensor 
 An Ultrasonic sensor has two eye-like sensors. The Transmitter sends high frequency sound waves and these sound waves reflect back towards the Receiver. The sensor calculates distance using the speed of sound and the time it takes for the sound waves to come back. Using simple Distance = Speed * Time mathematics, you can get the distance in whatever units you would like with conversions.
