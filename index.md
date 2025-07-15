@@ -10,8 +10,9 @@ The Gesture Controlled Robot is operated from a gauntlet device someone can wear
 ![Headstone Image](logo.svg)
 
 # Components and How They Work
-### Arduino Uno
-### Arduino Nano
+
+### Arduino Uno & Nano
+The Uno is a full-sized board with a standard USB port, while the Nano is a compact, breadboard-friendly version. Both boards can read sensor inputs and control outputs like motors, LEDs, etc. They are programmed using the Arduino IDE through USB and support communication with a wide range of external components.
 
 ### HC05 Bluetooth Module  
 The HC-05 is a Bluetooth module that allows wireless communication between devices. It can be used to send and receive data between your robot and a phone, computer, or another microcontroller. With a built-in transceiver, the module uses serial communication (TX/RX) to transmit data over short distances. By pairing it with your device/another module, you can control or monitor your robot wirelessly in real time. 
