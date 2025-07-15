@@ -40,6 +40,9 @@ The HC-05 is a Bluetooth module that allows wireless communication between devic
 ### L298N Motor Driver 
 The L298N Motor Driver is a dual H-bridge motor driver that lets you control the direction and speed of two DC motors. It takes signals from your microcontroller and converts them into high-power outputs that drive the motors. With inputs for enabling or disabling motors and controlling their rotation, it allows for features like forward/reverse motion and turning. 
 
+### MPU-6050
+The MPU6050 is a compact sensor module that combines a 3-axis gyroscope and a 3-axis accelerometer to measure motion and orientation. It communicates with microcontrollers like Arduino using the I2C protocol, allowing projects to detect tilt, acceleration, and rotational speed.
+
 ### Ultrasonic Sensor 
 An Ultrasonic sensor has two eye-like sensors. The Transmitter sends high frequency sound waves and these sound waves reflect back towards the Receiver. The sensor calculates distance using the speed of sound and the time it takes for the sound waves to come back. Using simple Distance = Speed * Time mathematics, you can get the distance in whatever units you would like with conversions.
 
