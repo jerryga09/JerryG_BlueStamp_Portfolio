@@ -8,7 +8,11 @@ The Gesture Controlled Robot is operated from a gauntlet device someone can wear
 <!---**Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.** -->
 
 ![Headstone Image](logo.svg)
-  
+
+# Components and How They Work
+HC05 Bluetooth Module - 
+L298N Motor Driver - 
+Ultrasonic Sensor - 
 # Final Milestone
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y-v5Rn76oAU?si=zlaKeDR1j38X5b0R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -36,6 +40,7 @@ My biggest triumph at Bluestamp is the increase of confidence in my ability to b
 - Designing using Fusion 360 & Onshape
 - Ohm's Law
 - Soldering
+- 3D Print
 
 ### Next Steps (Modification and After Bluestamp)
 For my modification, I plan on making a few key upgrades. First, I want to attach an ultrasonic sensor to the front of the car to help it detect obstacles and prevent collisions. Next, I hope to design a frame or come up with a solution to keep all the components on top of the car sturdy, organized, and secure. Finally, I want to improve how the car turns. Rather than stopping before changing direction, I’d like it to be able to turn while moving forward or backward, making its movement feel more natural and realistic.
