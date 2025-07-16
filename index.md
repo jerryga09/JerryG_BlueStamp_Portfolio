@@ -7,7 +7,7 @@ The Gesture Controlled Robot is operated from a gauntlet device someone can wear
 
 <!---**Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.** -->
 
-![Headstone Image](JerryG.HEIC)
+<img src="JerryG.HEIC" alt="Headstone Image" width="400">
 
 # Components and How They Work
 
