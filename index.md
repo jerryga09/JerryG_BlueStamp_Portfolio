@@ -38,12 +38,12 @@ The HC-05 is a Bluetooth module that allows wireless communication between devic
 18. If you have done the previous steps correctly, you should see the two modules blinking simultaneously which means the two modules are now paired (denoted by 2 quick blinks at a time)
 
 ### L298N Motor Driver 
-The L298N Motor Driver is a dual H-bridge motor driver that lets you control the direction and speed of two DC motors. It takes signals from your microcontroller and converts them into high-power outputs that drive the motors. With inputs for enabling or disabling motors and controlling their rotation, it allows for features like forward/reverse motion and turning. 
+The L298N Motor Driver controls the direction and speed of DC motors by switching the polarity of the voltage sent to the motor terminals. It uses an internal circuit called an H-Bridge, which allows it to reverse the current flow. When one output pin is set HIGH and the other is LOW, current flows in one direction, making the motor spin forward. Swapping the pins (making the first LOW and the second HIGH) reverses the current flow, which flips the voltage polarity and makes the motor spin in the opposite direction.
 
 <img src="l298n.png" alt="Headstone Image" width="200">
 
 ### MPU-6050
-The MPU6050 is a compact sensor module that combines a 3-axis gyroscope and a 3-axis accelerometer to measure motion and orientation. It communicates with microcontrollers like Arduino using the I2C protocol, allowing projects to detect tilt, acceleration, and rotational speed.
+The MPU6050 is a compact sensor module that combines a 3-axis gyroscope and a 3-axis accelerometer to measure motion and orientation. It communicates with microcontrollers using the I2C protocol, allowing projects to detect tilt, acceleration, and rotational speed. By reading changes in acceleration and angular velocity, the sensor helps track how a device is moving through space.
 
 <img src="mpu6050acc.png" alt="Headstone Image" width="200">
 
