@@ -165,22 +165,22 @@ Figure 5: Overhead Picture of Completed Milestone 1
 
 <img src="mileston1circuit.png" alt="Headstone Image" width="400">
 
-Figure 6:Schematic of Milestone 1 including L298N Motor Drivers
+Figure 6: Schematic of Milestone 1 including L298N Motor Drivers
 
 
 <img src="bluetoothgauntlet.png" alt="Headstone Image" width="400">
 
-Figure 7:Schematic of Bluetooth Gauntlet after Milestone 2 including Accelerometer, HC05, and Arduino Nano
+Figure 7: Schematic of Bluetooth Gauntlet after Milestone 2 including Accelerometer, HC05, and Arduino Nano
 
 
 <img src="overall schematic.png" alt="Headstone Image" width="400">
 
-Figure 8:Online Schematic of Entire Project
+Figure 8: Online Schematic of Entire Project
 
 
 <img src="circuit_image (2).png" alt="Headstone Image" width="400">
 
-Figure 9:Schematic of Modificated Car Including Ultrasonic Sensors
+Figure 9: Schematic of Modificated Car Including Ultrasonic Sensors
 
 
 # Code
