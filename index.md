@@ -60,6 +60,15 @@ For my Modification Milestone, I added a crash-prevention mechanism to the front
 ### Challenges
 At first, I only planned on adding one ultrasonic sensor on the front of the robot but it wans't able to detect objects that weren't in view (objects a bit to the side) and it often crashed. To solve this, I just hot-glued two more ultrasonic sensors to the side. However, the sensors would sometimes produce inaccurate values that would cause the robot to stop suddenly when it shouldn't. I fixed this by taking the average of the previous 5 distance readings so the faulty values would be averaged out. 
 
+### 3D Printed Items
+I 3D Printed two parts, a frame for the front of the robot and one for the back. I decided to do two separate items for two reasons. First, it would be easier and faster to 3D Print. Second, in case I measured something incorrectly, I could adjust them around to make sure they fit well. If I only had one part, and it didn't fit perfectly, then I would have to change measurements and 3D Print again. 
+Below are the two parts I printed out:
+
+FRONT FRAME
+<img src="Robot Car frame front.pdf" alt="Headstone Image" width="400">
+
+
+
 # Final Milestone
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y-v5Rn76oAU?si=zlaKeDR1j38X5b0R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
