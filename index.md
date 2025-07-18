@@ -93,9 +93,9 @@ Below are the two parts I printed out:
 <img src="IMG_3358.jpg" alt="Headstone Image" width="300">
 
 ### Back Frame
-<img src="Robot_Car_Frame_Back.jpeg" alt="Headstone Image" width="600">
+<img src="Robot_Car_Frame_Back.jpeg" alt="Headstone Image" width="600"> Figure 3: Drawing of Back Frame
 
-Figure 3: Drawing of Back Frame
+
 <img src="IMG_3359.jpg" alt="Headstone Image" width="300">
 
 
