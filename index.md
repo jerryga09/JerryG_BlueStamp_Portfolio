@@ -9,6 +9,27 @@ The Gesture Controlled Robot is operated from a gauntlet device someone can wear
 
 <img src="JerryG.jpg" alt="Headstone Image" width="400">
 
+### Challenges and Triumphs at Bluestamp
+My biggest challenge at Bluestamp was learning how to code with little to no previous experience. Although I have taken some python and C++ courses before, coding with an Arduino is a completely different thing. I definitely had to search up many tutorials on specific functions and how they work. It also took me a while with the electrical components of the project. Breadboards were confusing to me at first as well as voltage dividers, but I grew to understand how they worked. 
+
+My biggest triumph at Bluestamp is the increase of confidence in my ability to build a project using accessible materials you can easily find online. Being able to bring together code, hardware, and logic to make something that actually moves and responds to input felt very rewarding. I learned to troubleshoot problems on my own and adapt when things didn’t go as planned, which gave me a sense of independence I didn’t have before. Now, I feel much more capable of tackling future projects, even ones that seem out of reach at first.
+
+### Key Topics learned at Bluestamp
+- Breadboard Usage
+- Coding using Arduino IDE
+- Voltage Dividers
+- AT Commands with Bluetooth Modules
+- Some pins on an Arduino have to be empty during the uploading of code
+- Importance of syntax in C++ (or any coding language)
+- Accelerometer Data (acceleration, rotational acceleration, Roll, Pitch, and Yaw)
+- Using the Serial Monitor
+- Power Distribution
+- Arduino Usage (Uno & Nano)
+- Designing using Fusion 360 & Onshape
+- Ohm's Law
+- Soldering
+- 3D Print
+
 # Components and How They Work
 
 ### Arduino Uno & Nano
@@ -80,27 +101,6 @@ Below are the two parts I printed out:
 For my final milestone, the goal was to translate accelerometer data into movements of the robotic car. However, before I could begin working on that, I had to make a few quick modifications. First, instead of using two L298N motor drivers, I realized that one was sufficient, since I could connect both motors to the same driver using the motor output blocks (OUT1–OUT4). The second change involved the power supply. Previously, I was using a single 9V battery to power the Arduino Uno, and that power was also passed on to the motors through the driver. Now, I’ve separated the power sources: one 9V battery powers the Uno, and a separate battery pack with four 1.5V batteries powers the motors directly.
 
 To enable the car to move based on accelerometer data, I first wrote movement functions (forward, backward, left, and right). Then, I used if statements that checked the values of acX and acY from the accelerometer to trigger these movements. Through this process, I also learned that I didn’t need the other four variables (acceleration in the Z-axis and rotational acceleration in all three axes), as they were not relevant to my controls. 
-
-### Challenges and Triumphs at Bluestamp
-My biggest challenge at Bluestamp was learning how to code with little to no previous experience. Although I have taken some python and C++ courses before, coding with an Arduino is a completely different thing. I definitely had to search up many tutorials on specific functions and how they work. It also took me a while with the electrical components of the project. Breadboards were confusing to me at first as well as voltage dividers, but I grew to understand how they worked. 
-
-My biggest triumph at Bluestamp is the increase of confidence in my ability to build a project using accessible materials you can easily find online. Being able to bring together code, hardware, and logic to make something that actually moves and responds to input felt very rewarding. I learned to troubleshoot problems on my own and adapt when things didn’t go as planned, which gave me a sense of independence I didn’t have before. Now, I feel much more capable of tackling future projects, even ones that seem out of reach at first.
-
-### Key Topics learned at Bluestamp
-- Breadboard Usage
-- Coding using Arduino IDE
-- Voltage Dividers
-- AT Commands with Bluetooth Modules
-- Some pins on an Arduino have to be empty during the uploading of code
-- Importance of syntax in C++ (or any coding language)
-- Accelerometer Data (acceleration, rotational acceleration, Roll, Pitch, and Yaw)
-- Using the Serial Monitor
-- Power Distribution
-- Arduino Usage (Uno & Nano)
-- Designing using Fusion 360 & Onshape
-- Ohm's Law
-- Soldering
-- 3D Print
 
 ### Next Steps (Modification and After Bluestamp)
 For my modification, I plan on making a few key upgrades. First, I want to attach an ultrasonic sensor to the front of the car to help it detect obstacles and prevent collisions. Next, I hope to design a frame or come up with a solution to keep all the components on top of the car sturdy, organized, and secure. Finally, I want to improve how the car turns. Rather than stopping before changing direction, I’d like it to be able to turn while moving forward or backward, making its movement feel more natural and realistic.
