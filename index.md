@@ -65,11 +65,11 @@ I 3D Printed two parts, a frame for the front of the robot and one for the back.
 Below are the two parts I printed out:
 ### Front Frame
 <img src="Robot_Car_Frame_Front.jpg" alt="Headstone Image" width="600">
-<img src="IMG_3358.jpg" alt="Headstone Image" width="500">
+<img src="IMG_3358.jpg" alt="Headstone Image" width="300">
 
 ### Back Frame
 <img src="Robot_Car_Frame_Back.jpeg" alt="Headstone Image" width="600">
-<img src="IMG_3359.jpg" alt="Headstone Image" width="500">
+<img src="IMG_3359.jpg" alt="Headstone Image" width="300">
 
 
 
