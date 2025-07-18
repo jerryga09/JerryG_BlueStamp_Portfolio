@@ -87,9 +87,9 @@ At first, I only planned on adding one ultrasonic sensor on the front of the rob
 I 3D Printed two parts, a frame for the front of the robot and one for the back. I decided to do two separate items for two reasons. First, it would be easier and faster to 3D Print. Second, in case I measured something incorrectly, I could adjust them around to make sure they fit well. If I only had one part, and it didn't fit perfectly, then I would have to change measurements and 3D Print again. 
 Below are the two parts I printed out:
 ### Front Frame
-<img src="Robot_Car_Frame_Front.jpg" alt="Headstone Image" width="600">
+<img src="Robot_Car_Frame_Front.jpg" alt="Headstone Image" width="600"> Figure 2: Drawing of Front Frame
 
-Figure 2: Drawing of Front Frame
+
 <img src="IMG_3358.jpg" alt="Headstone Image" width="300">
 
 ### Back Frame
