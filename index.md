@@ -66,6 +66,9 @@ Below are the two parts I printed out:
 ### Front Frame
 <img src="Robot_Car_Frame_Front.jpg" alt="Headstone Image" width="600">
 
+### Back Frame
+<img src="Robot_Car_Frame_Back.jpg" alt="Headstone Image" width="600">
+
 
 
 # Final Milestone
