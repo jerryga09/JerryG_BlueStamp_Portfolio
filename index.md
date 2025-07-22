@@ -187,6 +187,148 @@ Figure 9: Schematic of Modificated Car Including Ultrasonic Sensors
 
 # Code
 
+### Code for Car Modification Milestone
+```
+#include <SoftwareSerial.h>
+#include <Adafruit_MPU6050.h>
+#include <Adafruit_Sensor.h>
+#include <Wire.h>
+SoftwareSerial mySerial(6, 7); //TX, RX pins on Uno
+
+int motor12_pin1 = 2; //setting pins to motors
+int motor12_pin2 = 3;
+int motor34_pin1 = 4;
+int motor34_pin2 = 5;
+
+const int trig1 = 12; //setting pins to ultrasonic sensors
+const int echo1 = 13;
+const int trig2 = 8;
+const int echo2 = 9;
+const int trig3 = 10;
+const int echo3 = 11;
+
+float distanceInches1; //defines distance values for each ultrasonic sensor
+float distanceInches2;
+float distanceInches3;
+
+void setup() {
+  pinMode(motor12_pin1, OUTPUT);
+  pinMode(motor12_pin2, OUTPUT);
+  pinMode(motor34_pin1, OUTPUT);
+  pinMode(motor34_pin2, OUTPUT);
+  Serial.begin(9600); //set baud rate
+  mySerial.begin(9600); //set baud rate
+  pinMode(trig1, OUTPUT);
+  pinMode(echo1, INPUT);
+  pinMode(trig2, OUTPUT);
+  pinMode(echo2, INPUT);
+  pinMode(trig3, OUTPUT);
+  pinMode(echo3, INPUT);
+}
+
+void forward() { //drive functions
+  digitalWrite(motor12_pin1, LOW);
+  digitalWrite(motor12_pin2, HIGH);
+  digitalWrite(motor34_pin1, LOW);
+  digitalWrite(motor34_pin2, HIGH);
+}
+
+void backward() {
+  digitalWrite(motor12_pin1, HIGH);
+  digitalWrite(motor12_pin2, LOW);
+  digitalWrite(motor34_pin1, HIGH);
+  digitalWrite(motor34_pin2, LOW);
+}
+
+void right() {
+  digitalWrite(motor12_pin1, LOW);
+  digitalWrite(motor12_pin2, HIGH);
+  digitalWrite(motor34_pin1, HIGH);
+  digitalWrite(motor34_pin2, LOW);
+}
+
+void left() {
+  digitalWrite(motor12_pin1, HIGH);
+  digitalWrite(motor12_pin2, LOW);
+  digitalWrite(motor34_pin1, LOW);
+  digitalWrite(motor34_pin2, HIGH);
+} 
+
+void stopMotors() {
+  digitalWrite(motor12_pin1, LOW);
+  digitalWrite(motor12_pin2, LOW);
+  digitalWrite(motor34_pin1, LOW);
+  digitalWrite(motor34_pin2, LOW);
+}
+
+float getAverageDistance(int trigPin, int echoPin, int numSamples = 5) { //function to find average of previous 5 values
+  float total = 0; //total distance of previous 5 readings
+  int validReadings = 0; //# of readings
+
+  for (int i = 0; i < numSamples; i++) {
+    digitalWrite(trigPin, LOW); //next few lines resets trigpin to make sure it is set correctly
+    delayMicroseconds(2);
+    digitalWrite(trigPin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(trigPin, LOW); 
+
+    float duration = pulseIn(echoPin, HIGH, 30000); //function to get duration
+    if (duration > 0) {
+      total += duration * 0.0067; //duration multiplied by constant to get distance in inches
+      validReadings++; 
+    }
+    delay(10); // short delay between samples
+  }
+
+  if (validReadings == 0) return 999; // if all readings failed
+  return total / validReadings;
+}
+
+void loop() {
+  distanceInches1 = getAverageDistance(trig1, echo1); //printing data in serial monitor for debugging
+  Serial.print("Distance 1: ");
+  Serial.println(distanceInches1);
+
+  distanceInches2 = getAverageDistance(trig2, echo2);
+  Serial.print("Distance 2: ");
+  Serial.println(distanceInches2);
+
+  distanceInches3 = getAverageDistance(trig3, echo3);
+  Serial.print("Distance 3: ");
+  Serial.println(distanceInches3);
+
+//below is code to get accelerometer data
+  if (mySerial.available()) { //if data is being sent from the other hc05
+    String msg = mySerial.readStringUntil('\n'); //setting the variable msg as the string of accelerometer data
+    float ax, ay, az, rx, ry, rz; //defines different variables
+
+    int comma1 = msg.indexOf(','); //finds location of all commas in string so separate variables can be found
+    int comma2 = msg.indexOf(',', comma1 + 1);
+    int comma3 = msg.indexOf(',', comma2 + 1);
+    int comma4 = msg.indexOf(',', comma3 + 1);
+    int comma5 = msg.indexOf(',', comma4 + 1);
+
+    ax = msg.substring(0, comma1).toFloat(); //separating variables
+    ay = msg.substring(comma1 + 1, comma2).toFloat();
+    az = msg.substring(comma2 + 1, comma3).toFloat();
+    rx = msg.substring(comma3 + 1, comma4).toFloat();
+    ry = msg.substring(comma4 + 1, comma5).toFloat();
+    rz = msg.substring(comma5 + 1).toFloat();
+
+    if (ax > 4.7 && distanceInches1 > 11 && distanceInches2 > 6 && distanceInches3 > 6) { //conditions for stoppage
+      forward();
+    } else if (ax < -4.7) {
+      backward();
+    } else if (ay > 4.6) {
+      left();
+    } else if (ay < -4.6) {
+      right();
+    } else {
+      stopMotors();
+    }
+  }
+}
+```
 ### Final Milestone Code for Controller
 ```
 #include <SoftwareSerial.h>
