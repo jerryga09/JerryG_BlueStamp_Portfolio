@@ -77,6 +77,8 @@ Figure 1: Diagram Explaining How Ultrasonic Sensor works
 
 
 # Modification Milestone
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ayp2T5ydbeU?si=XksshFF2b4sC3Gyp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ### Summary of Modification Milestone
 For my Modification Milestone, I added a crash-prevention mechanism to the front of my car. I accomplished this through the use of 3 ultrasonic sensors, each of them angled slightly different which allows for more field of vision. Aside from different angling, I also placed the two sensors on the sides a bit lower to make sure no obstacles are missed. I programmed the robot to stop if the center sensor detects an object within 11 inches, or if either of the side sensors detects an object within 6 inches. To ensure the ultrasonic sensors don't bug out or produce faulty readings, which could interfere with the robot’s movement, I wrote code to take the average of the previous five distance readings. I also 3d-printed a frame around the components on top of the robot, helping to keep them organized and out of view. 
 
