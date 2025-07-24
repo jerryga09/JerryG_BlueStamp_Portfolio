@@ -9,6 +9,8 @@ The Gesture Controlled Robot is operated from a gauntlet device someone can wear
 
 <img src="JerryG.jpg" alt="Headstone Image" width="400">
 
+<img src="FinalProjectBlueStamp.jpg" alt="Headstone Image" width="400">
+
 ### Challenges and Triumphs at Bluestamp
 My biggest challenge at Bluestamp was learning how to code with little to no previous experience. Although I have taken some python and C++ courses before, coding with an Arduino is a completely different thing. I definitely had to search up many tutorials on specific functions and how they work. It also took me a while with the electrical components of the project. Breadboards were confusing to me at first as well as voltage dividers, but I grew to understand how they worked. 
 
