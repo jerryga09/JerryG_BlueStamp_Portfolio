@@ -11,6 +11,8 @@ The Gesture Controlled Robot is operated from a gauntlet device someone can wear
 
 <img src="FinalProjectBlueStamp.jpg" alt="Headstone Image" width="400">
 
+Jerry G's Final BlueStamp Project
+
 ### Challenges and Triumphs at Bluestamp
 My biggest challenge at Bluestamp was learning how to code with little to no previous experience. Although I have taken some python and C++ courses before, coding with an Arduino is a completely different thing. I definitely had to search up many tutorials on specific functions and how they work. It also took me a while with the electrical components of the project. Breadboards were confusing to me at first as well as voltage dividers, but I grew to understand how they worked. 
 
@@ -91,13 +93,17 @@ At first, I only planned on adding one ultrasonic sensor on the front of the rob
 I 3D Printed two parts, a frame for the front of the robot and one for the back. I decided to do two separate items for two reasons. First, it would be easier and faster to 3D Print. Second, in case I measured something incorrectly, I could adjust them around to make sure they fit well. If I only had one part, and it didn't fit perfectly, then I would have to change measurements and 3D Print again. 
 Below are the two parts I printed out:
 ### Front Frame
-<img src="Robot_Car_Frame_Front.jpg" alt="Headstone Image" width="500"> Figure 2: Drawing of Front Frame
+<img src="Robot_Car_Frame_Front.jpg" alt="Headstone Image" width="500">
+
+Figure 2: Drawing of Front Frame
 
 
 <img src="IMG_3358.jpg" alt="Headstone Image" width="300">
 
 ### Back Frame
-<img src="Robot_Car_Frame_Back.jpeg" alt="Headstone Image" width="500"> Figure 3: Drawing of Back Frame
+<img src="Robot_Car_Frame_Back.jpeg" alt="Headstone Image" width="500">
+
+Figure 3: Drawing of Back Frame
 
 
 <img src="IMG_3359.jpg" alt="Headstone Image" width="300">
