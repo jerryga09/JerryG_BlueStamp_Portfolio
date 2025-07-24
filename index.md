@@ -100,13 +100,17 @@ Figure 2: Drawing of Front Frame
 
 <img src="IMG_3358.jpg" alt="Headstone Image" width="300">
 
+Figure 3: Picture of Front Frame
+
 ### Back Frame
 <img src="Robot_Car_Frame_Back.jpeg" alt="Headstone Image" width="500">
 
-Figure 3: Drawing of Back Frame
+Figure 4: Drawing of Back Frame
 
 
 <img src="IMG_3359.jpg" alt="Headstone Image" width="300">
+
+Figure 5: Picture of Back Frame
 
 
 
@@ -144,7 +148,7 @@ For my final milestone, my goal is to turn the raw data from the accelerometer i
 
 <img src="IMG_2921.jpg" alt="Headstone Image" width="400">
 
-Figure 4: Overhead Picture of Completed Milestone 2 
+Figure 6: Overhead Picture of Completed Milestone 2 
 
 # First Milestone
 
@@ -161,7 +165,7 @@ Next, I plan to move on to milestone two, which involves building the Bluetooth 
 
 <img src="IMG_2859.jpg" alt="Headstone Image" width="400">
 
-Figure 5: Overhead Picture of Completed Milestone 1
+Figure 7: Overhead Picture of Completed Milestone 1
 
 <!--- For your first milestone, describe what your project is and how you plan to build it. You can include:
 - An explanation about the different components of your project and how they will all integrate together
@@ -175,22 +179,22 @@ Figure 5: Overhead Picture of Completed Milestone 1
 
 <img src="mileston1circuit.png" alt="Headstone Image" width="400">
 
-Figure 6: Schematic of Milestone 1 including L298N Motor Drivers
+Figure 8: Schematic of Milestone 1 including L298N Motor Drivers
 
 
 <img src="bluetoothgauntlet.png" alt="Headstone Image" width="400">
 
-Figure 7: Schematic of Bluetooth Gauntlet after Milestone 2 including Accelerometer, HC05, and Arduino Nano
+Figure 9: Schematic of Bluetooth Gauntlet after Milestone 2 including Accelerometer, HC05, and Arduino Nano
 
 
 <img src="overall schematic.png" alt="Headstone Image" width="400">
 
-Figure 8: Online Schematic of Entire Project
+Figure 10: Online Schematic of Entire Project
 
 
 <img src="circuit_image (2).png" alt="Headstone Image" width="400">
 
-Figure 9: Schematic of Modificated Car Including Ultrasonic Sensors
+Figure 11: Schematic of Modificated Car Including Ultrasonic Sensors
 
 
 # Code
