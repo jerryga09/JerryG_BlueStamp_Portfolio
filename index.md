@@ -79,6 +79,8 @@ An Ultrasonic sensor has two eye-like sensors. The Transmitter sends high freque
 
 Figure 1: Diagram Explaining How Ultrasonic Sensor works
 
+# Post-Demo Night Modification 7/24/25
+After Demo Night, I made one final modification: I added a buzzer to warn the driver when the car is about to crash. If the car is close to an obstacle and the driver's hand is still positioned to move forward, the buzzer will sound, telling the driver to either back up or to stop trying to go forward. I also adjusted the distance conditions for the robot to stop, adding a few inches to each parameter. 
 
 # Modification Milestone
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Ayp2T5ydbeU?si=XksshFF2b4sC3Gyp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
