@@ -201,7 +201,7 @@ Figure 11: Schematic of Modificated Car Including Ultrasonic Sensors
 
 # Code
 
-### Code for Car Modification Milestone
+### Code for Car Modification Milestone (including Buzzer)
 ```
 #include <SoftwareSerial.h>
 #include <Adafruit_MPU6050.h>
@@ -221,6 +221,8 @@ const int echo2 = 9;
 const int trig3 = 10;
 const int echo3 = 11;
 
+const int buzzerPin = A0; // Add buzzer connected to analog pin A0
+
 float distanceInches1; //defines distance values for each ultrasonic sensor
 float distanceInches2;
 float distanceInches3;
@@ -238,6 +240,7 @@ void setup() {
   pinMode(echo2, INPUT);
   pinMode(trig3, OUTPUT);
   pinMode(echo3, INPUT);
+  pinMode(buzzerPin, OUTPUT); // Setup buzzer pin as output
 }
 
 void forward() { //drive functions
@@ -311,7 +314,6 @@ void loop() {
   Serial.print("Distance 3: ");
   Serial.println(distanceInches3);
 
-//below is code to get accelerometer data
   if (mySerial.available()) { //if data is being sent from the other hc05
     String msg = mySerial.readStringUntil('\n'); //setting the variable msg as the string of accelerometer data
     float ax, ay, az, rx, ry, rz; //defines different variables
@@ -329,19 +331,29 @@ void loop() {
     ry = msg.substring(comma4 + 1, comma5).toFloat();
     rz = msg.substring(comma5 + 1).toFloat();
 
-    if (ax > 4.7 && distanceInches1 > 11 && distanceInches2 > 6 && distanceInches3 > 6) { //conditions for stoppage
-      forward();
-    } else if (ax < -4.7) {
-      backward();
-    } else if (ay > 4.6) {
-      left();
-    } else if (ay < -4.6) {
-      right();
+    if (ax > 4.7) { // trying to move forward
+      if (distanceInches1 > 13 && distanceInches2 > 7 && distanceInches3 > 7) {
+        forward();
+        digitalWrite(buzzerPin, LOW); // safe to move forward
+      } else {
+        stopMotors();
+        digitalWrite(buzzerPin, HIGH); // blocked path while trying to go forward
+      }
     } else {
-      stopMotors();
+      digitalWrite(buzzerPin, LOW); // buzzer off unless moving forward into obstacle
+      if (ax < -4.7) {
+        backward();
+      } else if (ay > 4.6) {
+        left();
+      } else if (ay < -4.6) {
+        right();
+      } else {
+        stopMotors();
+      }
     }
   }
 }
+
 ```
 ### Final Milestone Code for Controller
 ```
